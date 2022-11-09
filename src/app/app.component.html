@@ -111,6 +111,16 @@
     <input type="radio" formControlName="managedsoftware" value="No" />
     <label class="form-check-label" for="managedsoftwareno">No</label>
   </div>
+  <p><b>Do you need</b></p>
+  <ul formArrayName="softwares">
+    <li
+      [formGroupName]="i"
+      *ngFor="let item of form.controls?.softwares?.controls; let i = index"
+    >
+      <input type="checkbox" formControlName="checked" />
+      {{ softwares[i].name }}
+    </li>
+  </ul>
   <button type="submit" color="danger" expand="block">Submit</button>
 </form>
 

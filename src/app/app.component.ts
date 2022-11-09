@@ -13,6 +13,10 @@ interface DevicesInterface {
   name: string;
   checked: boolean;
 }
+interface SoftwaresInterface {
+  name: string;
+  checked: boolean;
+}
 const RADIO_LIST_FROM_DATABASE = [
   { name: 'Camera', checked: false },
   { name: 'Doorbell', checked: false },
@@ -33,6 +37,12 @@ const RADIO_LIST3_FROM_DATABASE = [
   { name: 'Doorbell', checked: false },
   { name: 'Alarm', checked: true },
 ];
+const RADIO_LIST4_FROM_DATABASE = [
+  { name: 'Email', checked: false },
+  { name: 'Office', checked: false },
+  { name: 'Cloud', checked: true },
+  { name: 'Security', checked: true },
+];
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -43,6 +53,7 @@ export class AppComponent implements OnInit {
   speed: SpeedInterface[];
   staticip: IPInterface[];
   devices: DevicesInterface[];
+  softwares: SoftwaresInterface[];
   form: FormGroup;
   result: {
     selectedSpeed: SpeedInterface[];
@@ -76,6 +87,7 @@ export class AppComponent implements OnInit {
     this.speed = RADIO_LIST1_FROM_DATABASE;
     this.staticip = RADIO_LIST2_FROM_DATABASE;
     this.devices = RADIO_LIST3_FROM_DATABASE;
+    this.softwares = RADIO_LIST4_FROM_DATABASE;
     // build reactive form skeleton
     this.form = new FormGroup({
       // control for radio exemple
@@ -92,6 +104,7 @@ export class AppComponent implements OnInit {
       speed: new FormArray([]),
       staticip: new FormArray([]),
       devices: new FormArray([]),
+      softwares: new FormArray([]),
     });
     // bind existing value to form control
     this._patchValues();
@@ -136,6 +149,18 @@ export class AppComponent implements OnInit {
         })
       );
     });
+    const formArray4 = this.form.get('softwares') as FormArray;
+    // loop for each existing value
+    this.softwares.forEach((softwares) => {
+      // add new control to FormArray
+      formArray4.push(
+        // here the new FormControl with item value from RADIO_LIST_FROM_DATABASE
+        new FormGroup({
+          name: new FormControl(softwares.name),
+          checked: new FormControl(softwares.checked),
+        })
+      );
+    });
   }
 
   submitForm(): void {
@@ -147,6 +172,8 @@ export class AppComponent implements OnInit {
       value?.staticip?.filter((f: IPInterface) => f.checked) || [];
     const selectedDevice =
       value?.devices?.filter((f: DevicesInterface) => f.checked) || [];
+    const selectedSoftware =
+      value?.softwares?.filter((f: SoftwaresInterface) => f.checked) || [];
     // form value binded
     console.log('current form value: ', value);
     // console.log('only selected form value: ', selectedFruit);
