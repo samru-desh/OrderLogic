@@ -11,16 +11,6 @@
     <input type="radio" formControlName="internet" value="No" />
     <label class="form-check-label" for="internetno">No</label>
   </div>
-
-  <p><b>Reactive Checkbox</b></p>
-  <ul formArrayName="fruits">
-    <li
-      [formGroupName]="i"
-      *ngFor="let item of form.controls?.fruits?.controls; let i = index"
-    >
-      <input type="checkbox" formControlName="checked" /> {{ fruits[i].name }}
-    </li>
-  </ul>
   <p><b>Speed</b></p>
   <ul formArrayName="speed">
     <li
@@ -130,6 +120,29 @@
     <input type="radio" formControlName="phoneservice" value="No" />
     <label class="form-check-label" for="phoneserviceno">No</label>
   </div>
+  <p><b>Do you need just phone or you need more features?</b></p>
+  <div>
+    <input type="text" formControlName="phoneservicemorefeatures" />
+  </div>
+  <p><b>Do you need an app?</b></p>
+  <div>
+    <input type="radio" formControlName="app" value="Yes" />
+    <label class="form-check-label" for="appyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="app" value="No" />
+    <label class="form-check-label" for="appno">No</label>
+  </div>
+  <p><b>Do you need a phone?</b></p>
+  <div>
+    <input type="radio" formControlName="phone" value="Yes" />
+    <label class="form-check-label" for="phoneyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="phone" value="No" />
+    <label class="form-check-label" for="phoneno">No</label>
+  </div>
+  <br />
   <button type="submit" color="danger" expand="block">Submit</button>
 </form>
 
