@@ -121,6 +121,15 @@
       {{ softwares[i].name }}
     </li>
   </ul>
+  <p><b>Do you need a phone service?</b></p>
+  <div>
+    <input type="radio" formControlName="phoneservice" value="Yes" />
+    <label class="form-check-label" for="phoneserviceyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="phoneservice" value="No" />
+    <label class="form-check-label" for="phoneserviceno">No</label>
+  </div>
   <button type="submit" color="danger" expand="block">Submit</button>
 </form>
 

@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
     manageddeviceinstall: string;
     lteS6backup: string;
     managedsoftware: string;
+    phoneservice: string;
   } = {
     selectedSpeed: [],
     selectedIp: [],
@@ -79,6 +80,7 @@ export class AppComponent implements OnInit {
     manageddeviceinstall: '',
     lteS6backup: '',
     managedsoftware: '',
+    phoneservice: '',
   };
 
   ngOnInit(): void {
@@ -99,6 +101,7 @@ export class AppComponent implements OnInit {
       manageddeviceinstall: new FormControl(null, Validators.required),
       lteS6backup: new FormControl(null, Validators.required),
       managedsoftware: new FormControl(null, Validators.required),
+      phoneservice: new FormControl(null, Validators.required),
       // control for Checkbox exemple
       fruits: new FormArray([]),
       speed: new FormArray([]),
@@ -190,6 +193,7 @@ export class AppComponent implements OnInit {
       manageddeviceinstall: value?.manageddeviceinstall || '',
       lteS6backup: value?.lteS6backup || '',
       managedsoftware: value?.managedsoftware || '',
+      phoneservice: value?.phoneservice || '',
     };
   }
 }
