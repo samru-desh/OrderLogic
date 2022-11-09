@@ -84,6 +84,24 @@
       <input type="checkbox" formControlName="checked" /> {{ devices[i].name }}
     </li>
   </ul>
+  <p><b>Do you need a managed install?</b></p>
+  <div>
+    <input type="radio" formControlName="manageddeviceinstall" value="Yes" />
+    <label class="form-check-label" for="installdeviceyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="manageddeviceinstall" value="No" />
+    <label class="form-check-label" for="installdeviceno">No</label>
+  </div>
+  <p><b>Do you want a LTE/S6 backup?</b></p>
+  <div>
+    <input type="radio" formControlName="lteS6backup" value="Yes" />
+    <label class="form-check-label" for="backupS6yes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="lteS6backup" value="No" />
+    <label class="form-check-label" for="backupS6no">No</label>
+  </div>
   <button type="submit" color="danger" expand="block">Submit</button>
 </form>
 
