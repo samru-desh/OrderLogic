@@ -71,6 +71,7 @@ export class AppComponent implements OnInit {
     phoneservicemorefeatures: string;
     app: string;
     phone: string;
+    tv: string;
   } = {
     selectedSpeed: [],
     selectedIp: [],
@@ -87,6 +88,7 @@ export class AppComponent implements OnInit {
     phoneservicemorefeatures: '',
     app: '',
     phone: '',
+    tv: '',
   };
 
   ngOnInit(): void {
@@ -111,6 +113,7 @@ export class AppComponent implements OnInit {
       phoneservicemorefeatures: new FormControl(null, Validators.required),
       app: new FormControl(null, Validators.required),
       phone: new FormControl(null, Validators.required),
+      tv: new FormControl(null, Validators.required),
       // control for Checkbox exemple
       fruits: new FormArray([]),
       speed: new FormArray([]),
@@ -206,6 +209,7 @@ export class AppComponent implements OnInit {
       phoneservicemorefeatures: value?.phoneservicemorefeatures || '',
       app: value?.app || '',
       phone: value?.phone || '',
+      tv: value?.tv || '',
     };
   }
 }
