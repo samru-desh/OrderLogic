@@ -142,7 +142,29 @@
     <input type="radio" formControlName="phone" value="No" />
     <label class="form-check-label" for="phoneno">No</label>
   </div>
-  <p><b>Do you need DirectTV?</b></p>
+  <p><b>Do you need DirectV?</b></p>
+  <div>
+    <input type="radio" formControlName="directtv" value="Yes" />
+    <label class="form-check-label" for="directtvyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="directtv" value="No" />
+    <label class="form-check-label" for="directtvno">No</label>
+  </div>
+  <p><b>What package would you like?</b></p>
+  <div>
+    <input type="text" formControlName="package" />
+  </div>
+  <p><b>Do you need a settopbox?</b></p>
+  <div>
+    <input type="radio" formControlName="settopbox" value="Yes" />
+    <label class="form-check-label" for="settopboxyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="settopbox" value="No" />
+    <label class="form-check-label" for="settopboxno">No</label>
+  </div>
+  <p><b>Do you need a TV?</b></p>
   <div>
     <input type="radio" formControlName="tv" value="Yes" />
     <label class="form-check-label" for="tvyes">Yes</label>
@@ -150,6 +172,15 @@
   <div>
     <input type="radio" formControlName="tv" value="No" />
     <label class="form-check-label" for="tvno">No</label>
+  </div>
+  <p><b>Do you need a managed install?</b></p>
+  <div>
+    <input type="radio" formControlName="managedirectvinstall" value="Yes" />
+    <label class="form-check-label" for="installdirectvyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="managedirectvinstall" value="No" />
+    <label class="form-check-label" for="installdirectveno">No</label>
   </div>
   <br />
   <button type="submit" color="danger" expand="block">Submit</button>

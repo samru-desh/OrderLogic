@@ -72,6 +72,10 @@ export class AppComponent implements OnInit {
     app: string;
     phone: string;
     tv: string;
+    package: string;
+    directtv: string;
+    settopbox: string;
+    managedirectvinstall: string;
   } = {
     selectedSpeed: [],
     selectedIp: [],
@@ -89,6 +93,10 @@ export class AppComponent implements OnInit {
     app: '',
     phone: '',
     tv: '',
+    package: '',
+    directtv: '',
+    settopbox: '',
+    managedirectvinstall: '',
   };
 
   ngOnInit(): void {
@@ -114,6 +122,10 @@ export class AppComponent implements OnInit {
       app: new FormControl(null, Validators.required),
       phone: new FormControl(null, Validators.required),
       tv: new FormControl(null, Validators.required),
+      package: new FormControl(null, Validators.required),
+      directtv: new FormControl(null, Validators.required),
+      settopbox: new FormControl(null, Validators.required),
+      managedirectvinstall: new FormControl(null, Validators.required),
       // control for Checkbox exemple
       fruits: new FormArray([]),
       speed: new FormArray([]),
@@ -209,7 +221,11 @@ export class AppComponent implements OnInit {
       phoneservicemorefeatures: value?.phoneservicemorefeatures || '',
       app: value?.app || '',
       phone: value?.phone || '',
+      directtv: value?.directtv || '',
+      package: value?.package,
       tv: value?.tv || '',
+      settopbox: value?.settopbox,
+      managedirectvinstall: value?.managedirectvinstall,
     };
   }
 }
