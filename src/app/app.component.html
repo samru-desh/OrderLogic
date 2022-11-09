@@ -1,0 +1,93 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <p><b>Do you need internet?</b></p>
+  <div>
+    <input type="radio" formControlName="internet" value="Yes" />
+    <label class="form-check-label" for="internetyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="internet" value="No" />
+    <label class="form-check-label" for="internetno">No</label>
+  </div>
+
+  <p><b>Reactive Checkbox</b></p>
+  <ul formArrayName="fruits">
+    <li
+      [formGroupName]="i"
+      *ngFor="let item of form.controls?.fruits?.controls; let i = index"
+    >
+      <input type="checkbox" formControlName="checked" /> {{ fruits[i].name }}
+    </li>
+  </ul>
+  <p><b>Speed</b></p>
+  <ul formArrayName="speed">
+    <li
+      [formGroupName]="i"
+      *ngFor="let item of form.controls?.speed?.controls; let i = index"
+    >
+      <input type="checkbox" formControlName="checked" /> {{ speed[i].name }}
+    </li>
+  </ul>
+  <p><b>Do you need static ip?</b></p>
+  <div>
+    <input type="radio" formControlName="ip" value="Yes" />
+    <label class="form-check-label" for="ipyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="ip" value="No" />
+    <label class="form-check-label" for="ipno">No</label>
+  </div>
+  <p><b>IP</b></p>
+  <ul formArrayName="staticip">
+    <li
+      [formGroupName]="i"
+      *ngFor="let item of form.controls?.staticip?.controls; let i = index"
+    >
+      <input type="checkbox" formControlName="checked" /> {{ staticip[i].name }}
+    </li>
+  </ul>
+  <p><b>Do you need a managed install?</b></p>
+  <div>
+    <input type="radio" formControlName="managedinstall" value="Yes" />
+    <label class="form-check-label" for="installyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="managedinstall" value="No" />
+    <label class="form-check-label" for="installno">No</label>
+  </div>
+  <p><b>Do you want a LTE backup?</b></p>
+  <div>
+    <input type="radio" formControlName="ltebackup" value="Yes" />
+    <label class="form-check-label" for="backupyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="ltebackup" value="No" />
+    <label class="form-check-label" for="backupno">No</label>
+  </div>
+  <p><b>Do you need managed security?</b></p>
+  <div>
+    <input type="radio" formControlName="security" value="Yes" />
+    <label class="form-check-label" for="securityyes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" formControlName="security" value="No" />
+    <label class="form-check-label" for="securityno">No</label>
+  </div>
+  <p><b>Do you need</b></p>
+  <ul formArrayName="devices">
+    <li
+      [formGroupName]="i"
+      *ngFor="let item of form.controls?.devices?.controls; let i = index"
+    >
+      <input type="checkbox" formControlName="checked" /> {{ devices[i].name }}
+    </li>
+  </ul>
+  <button type="submit" color="danger" expand="block">Submit</button>
+</form>
+
+<p><b>JSON OBJECT</b> <br /></p>
+<pre>{{ result | json }}</pre>
+
+<hr />
