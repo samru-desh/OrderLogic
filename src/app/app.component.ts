@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
   staticip: IPInterface[];
   devices: DevicesInterface[];
   softwares: SoftwaresInterface[];
+  isSpeed: boolean;
   form: FormGroup;
   result: {
     selectedSpeed: SpeedInterface[];
@@ -101,7 +102,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // bind props with data from database
-
+    this.isSpeed = false;
     this.speed = RADIO_LIST1_FROM_DATABASE;
     this.staticip = RADIO_LIST2_FROM_DATABASE;
     this.devices = RADIO_LIST3_FROM_DATABASE;
@@ -136,7 +137,13 @@ export class AppComponent implements OnInit {
     // bind existing value to form control
     this._patchValues();
   }
-
+  a(a) {
+    if (a == 'yes') {
+      this.isSpeed = true;
+    } else {
+      this.isSpeed = false;
+    }
+  }
   private _patchValues(): void {
     // get array control
 
@@ -189,7 +196,6 @@ export class AppComponent implements OnInit {
       );
     });
   }
-
   submitForm(): void {
     const { value } = this.form;
     // get selected fruit from FormGroup value
